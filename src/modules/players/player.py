@@ -13,6 +13,7 @@ class Player:
         self.pieces = Player.generate_four_pieces(self.color)
         self.current_dice = None
         self.current_piece = None
+        self.score = 0
 
     @staticmethod
     def generate_four_pieces(color):
@@ -97,6 +98,12 @@ class Player:
             self.do_play()
         else:
             self.move_with_number(self.current_dice)
+
+    def measure_score(self):
+        score = 0
+        for piece in self.pieces:
+            score += piece.through
+        self.score = score
 
 
 # player1 = Player('amir', 'red')
