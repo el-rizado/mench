@@ -4,6 +4,7 @@ Amir Hossein Mohseni Fard
 """
 from src.modules.pieces.piece import Piece
 from random import randint
+from time import sleep
 
 
 class Player:
@@ -92,6 +93,7 @@ class Player:
 
     def do_play(self):
         self.roll_dice()
+        sleep(3)
         print(self.current_dice)
         if self.current_dice == 6:
             self.move_with_six(6)
